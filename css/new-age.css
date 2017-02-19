@@ -435,3 +435,13 @@ img::-moz-selection {
   color: white;
   background: transparent;
 }
+
+/* Survey Css */
+.survey-questions {
+  margin-bottom: 20px;
+}
+
+.survey-question-header {
+  font-size: 15px;
+  font-weight: bold;
+}
