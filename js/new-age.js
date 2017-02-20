@@ -53,17 +53,6 @@ var QueryString = function () {
     return queryString;
 }();
 
-var AppRecommender = function () {
-
-    var websiteImage = document.getElementById('recommend-image');
-    console.log(HasParentalControls());
-    if (HasParentalControls() === 'yes') {
-        alert('yes');
-    } else if (HasParentalControls() === 'no') {
-        alert('no');
-    }
-}();
-
 var HasParentalControls = function () {
     return QueryString.questionOne;
 }
@@ -75,3 +64,51 @@ var BlockTextingOrEducate = function () {
 var BlockCommunicationOrReduceDistractions = function () {
     return QueryString.questionThree;
 }
+
+var AppRecommender = function () {
+
+    var recommenderImage = document.getElementById("recommend-image");
+    var recommenderLink = document.getElementById("recommend-link");
+
+    if (HasParentalControls() === 'yes' &&
+        BlockTextingOrEducate() === 'blockTexting' &&
+        BlockCommunicationOrReduceDistractions() === 'blockCommunication') {
+            recommenderImage.src = "img/app-photos/CellControl.PNG";
+            recommenderLink.href = "https://www.cellcontrol.com";
+     }
+    else if (HasParentalControls() === 'yes' &&
+        BlockTextingOrEducate() === 'blockTexting' &&
+        BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
+            recommenderImage.src = "img/app-photos/DriveSafeMode.PNG";
+    }
+    else if (HasParentalControls() === 'yes' &&
+        BlockTextingOrEducate() === 'educate' &&
+        BlockCommunicationOrReduceDistractions() === 'blockCommunication') {
+             recommenderImage.src = "img/app-photos/DriveSafeMode.PNG";
+    }
+    else if (HasParentalControls() === 'yes' &&
+        BlockTextingOrEducate() === 'educate' &&
+        BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
+             recommenderImage.src = "img/app-photos/Focus.PNG";
+    }
+    else if (HasParentalControls() === 'no' &&
+        BlockTextingOrEducate() === 'blockTexting' &&
+        BlockCommunicationOrReduceDistractions() === 'blockCommunication'){
+            recommenderImage.src= "img/app-photos/TextBuster.PNG";
+    }
+    else if (HasParentalControls() === 'no' &&
+        BlockTextingOrEducate() === 'blockTexting' &&
+        BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
+            recommenderImage.src= "img/app-photos/TextBuster.PNG"
+    }
+    else if (HasParentalControls() === 'no' &&
+        BlockTextingOrEducate() === 'educate' &&
+        BlockCommunicationOrReduceDistractions() === 'blockCommunication') {
+             recommenderImage.src= "img/app-photos/DriveFirst.PNG";
+    }
+    else if (HasParentalControls() === 'no' &&
+        BlockTextingOrEducate() === 'educate' &&
+        BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
+            recommenderImage.src = "img/app-photos/ItCanWait.PNG";
+    }        
+}();
