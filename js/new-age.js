@@ -52,7 +52,7 @@ var QueryString = function () {
     }
     return queryString;
 }();
-
+// All recomendation code
 var HasParentalControls = function () {
     return QueryString.questionOne;
 }
@@ -80,35 +80,43 @@ var AppRecommender = function () {
         BlockTextingOrEducate() === 'blockTexting' &&
         BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
             recommenderImage.src = "img/app-photos/DriveSafeMode.PNG";
+            recommenderLink.href = "https://drivesafemode.com";
     }
     else if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'educate' &&
         BlockCommunicationOrReduceDistractions() === 'blockCommunication') {
              recommenderImage.src = "img/app-photos/DriveSafeMode.PNG";
+             recommenderLink.href = "https://drivesafemode.com";
+                                      
     }
     else if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'educate' &&
         BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
              recommenderImage.src = "img/app-photos/Focus.PNG";
+             recommenderLink.href = "https://drivefocus.com";
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'blockTexting' &&
         BlockCommunicationOrReduceDistractions() === 'blockCommunication'){
             recommenderImage.src= "img/app-photos/TextBuster.PNG";
+            recommenderLink.href = "https://shop.textbuster.com";
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'blockTexting' &&
         BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
-            recommenderImage.src= "img/app-photos/TextBuster.PNG"
+            recommenderImage.src= "img/app-photos/TextBuster.PNG";
+            recommenderLink.href = "https://shop.textbuster.com";
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'educate' &&
         BlockCommunicationOrReduceDistractions() === 'blockCommunication') {
              recommenderImage.src= "img/app-photos/DriveFirst.PNG";
+             recommenderLink.href = "https://sprint-drivefirst.safely.com";
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'educate' &&
         BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
             recommenderImage.src = "img/app-photos/ItCanWait.PNG";
+            recommenderImage.src = "https://www.itcanwait.com";
     }        
 }();
