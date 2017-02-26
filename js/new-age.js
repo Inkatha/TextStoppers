@@ -30,6 +30,29 @@
     })
 })(jQuery); // End of use strict
 
+var QueryString = function () {
+    // This function is anonymous, is executed immediately and 
+    // the return value is assigned to QueryString!
+    var queryString = {};
+    var query = window.location.search.substring(1);
+    var variables = query.split('&');
+    for (var i = 0; i < variables.length; i++) {
+        var pair = variables[i].split('=');
+
+        var parameterType = typeof queryString[pair[0]];
+
+        if (parameterType === 'undefined') {
+            queryString[pair[0]] = decodeURIComponent(pair[1]);
+        } else if (parameterType === 'string') {
+            var arr = [ queryString[pair[0]], decodeURIComponent(pair[1]) ]
+            queryString[pair[0]] = arr;
+        } else {
+            queryString[pair[0]].push(decodeURIComponent(pair[1]));
+        }
+    }
+    return queryString;
+}();
+// All recomendation code
 var HasParentalControls = function () {
     var questionOne = $("input:radio[name='questionOne']:checked").val();
     return questionOne;
@@ -60,6 +83,7 @@ var AppRecommender = function () {
                 $("#recommend-image").attr('src', 'img/app-photos/CellControl.PNG');
             })
             .fadeIn(400);
+            recommenderLink.href = "https://www.cellcontrol.com";
     }
     else if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'blockTexting' &&
@@ -68,6 +92,7 @@ var AppRecommender = function () {
                 $('#recommend-image').attr('src', 'img/app-photos/DriveSafeMode.PNG');
             })
             .fadeIn(400);
+            recommenderLink.href = "https://drivesafemode.com";
     }
     else if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'educate' &&
@@ -76,6 +101,7 @@ var AppRecommender = function () {
                 $('#recommend-image').attr('src', 'img/app-photos/DriveSafeMode.PNG');
             })
             .fadeIn(400);
+             recommenderLink.href = "https://drivesafemode.com";
     }
     else if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'educate' &&
@@ -84,6 +110,7 @@ var AppRecommender = function () {
                 $('#recommend-image').attr('src', 'img/app-photos/Focus.PNG');
             })
             .fadeIn(400);
+             recommenderLink.href = "https://drivefocus.com";
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'blockTexting' &&
@@ -92,6 +119,7 @@ var AppRecommender = function () {
                 $('#recommend-image').attr('src', 'img/app-photos/TextBuster.PNG');
             })
             .fadeIn(400);
+            recommenderLink.href = "https://shop.textbuster.com";
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'blockTexting' &&
@@ -100,6 +128,7 @@ var AppRecommender = function () {
                 $('#recommend-image').attr('src', 'img/app-photos/TextBuster.PNG');
             })
             .fadeIn(400);
+            recommenderLink.href = "https://shop.textbuster.com";
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'educate' &&
@@ -108,6 +137,7 @@ var AppRecommender = function () {
                 $('#recommend-image').attr('src', 'img/app-photos/DriveFirst.PNG');
             })
             .fadeIn(400);
+             recommenderLink.href = "https://sprint-drivefirst.safely.com";
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'educate' &&
@@ -116,5 +146,6 @@ var AppRecommender = function () {
                $('#recommend-image').attr('src', 'img/app-photos/ItCanWait.PNG');
             })
             .fadeIn(400);
+            RecommenderLink.src = "https://www.itcanwait.com";
     }
 };
