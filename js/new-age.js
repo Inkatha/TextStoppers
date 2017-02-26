@@ -1,3 +1,4 @@
+
 (function($) {
     "use strict"; // Start of use strict
 
@@ -27,88 +28,93 @@
             top: 50
         }
     })
-
 })(jQuery); // End of use strict
 
-var QueryString = function () {
-    // This function is anonymous, is executed immediately and 
-    // the return value is assigned to QueryString!
-    var queryString = {};
-    var query = window.location.search.substring(1);
-    var variables = query.split('&');
-    for (var i = 0; i < variables.length; i++) {
-        var pair = variables[i].split('=');
-
-        var parameterType = typeof queryString[pair[0]];
-
-        if (parameterType === 'undefined') {
-            queryString[pair[0]] = decodeURIComponent(pair[1]);
-        } else if (parameterType === 'string') {
-            var arr = [ queryString[pair[0]], decodeURIComponent(pair[1]) ]
-            queryString[pair[0]] = arr;
-        } else {
-            queryString[pair[0]].push(decodeURIComponent(pair[1]));
-        }
-    }
-    return queryString;
-}();
-
 var HasParentalControls = function () {
-    return QueryString.questionOne;
+    var questionOne = $("input:radio[name='questionOne']:checked").val();
+    return questionOne;
 }
 
 var BlockTextingOrEducate = function () {
-    return QueryString.questionTwo;
+    var questionTwo = $("input:radio[name='questionTwo']:checked").val();
+    return questionTwo;
 }
 
 var BlockCommunicationOrReduceDistractions = function () {
-    return QueryString.questionThree;
+    var questionThree = $("input:radio[name='questionThree']:checked").val();
+    return questionThree;
 }
+
+$('#submit-button').click(function (e) {
+    AppRecommender();
+});
 
 var AppRecommender = function () {
 
-    var recommenderImage = document.getElementById("recommend-image");
     var recommenderLink = document.getElementById("recommend-link");
 
     if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'blockTexting' &&
         BlockCommunicationOrReduceDistractions() === 'blockCommunication') {
-            recommenderImage.src = "img/app-photos/CellControl.PNG";
-            recommenderLink.href = "https://www.cellcontrol.com";
-     }
+            $('#recommend-image').fadeOut(400, function() { 
+                $("#recommend-image").attr('src', 'img/app-photos/CellControl.PNG');
+            })
+            .fadeIn(400);
+    }
     else if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'blockTexting' &&
         BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
-            recommenderImage.src = "img/app-photos/DriveSafeMode.PNG";
+            $('#recommend-image').fadeOut(400, function() { 
+                $('#recommend-image').attr('src', 'img/app-photos/DriveSafeMode.PNG');
+            })
+            .fadeIn(400);
     }
     else if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'educate' &&
         BlockCommunicationOrReduceDistractions() === 'blockCommunication') {
-             recommenderImage.src = "img/app-photos/DriveSafeMode.PNG";
+            $('#recommend-image').fadeOut(400, function() { 
+                $('#recommend-image').attr('src', 'img/app-photos/DriveSafeMode.PNG');
+            })
+            .fadeIn(400);
     }
     else if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'educate' &&
         BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
-             recommenderImage.src = "img/app-photos/Focus.PNG";
+            $('#recommend-image').fadeOut(400, function() { 
+                $('#recommend-image').attr('src', 'img/app-photos/Focus.PNG');
+            })
+            .fadeIn(400);
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'blockTexting' &&
         BlockCommunicationOrReduceDistractions() === 'blockCommunication'){
-            recommenderImage.src= "img/app-photos/TextBuster.PNG";
+            $('#recommend-image').fadeOut(400, function() { 
+                $('#recommend-image').attr('src', 'img/app-photos/TextBuster.PNG');
+            })
+            .fadeIn(400);
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'blockTexting' &&
         BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
-            recommenderImage.src= "img/app-photos/TextBuster.PNG"
+            $('#recommend-image').fadeOut(400, function() { 
+                $('#recommend-image').attr('src', 'img/app-photos/TextBuster.PNG');
+            })
+            .fadeIn(400);
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'educate' &&
         BlockCommunicationOrReduceDistractions() === 'blockCommunication') {
-             recommenderImage.src= "img/app-photos/DriveFirst.PNG";
+            $('#recommend-image').fadeOut(400, function() { 
+                $('#recommend-image').attr('src', 'img/app-photos/DriveFirst.PNG');
+            })
+            .fadeIn(400);
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'educate' &&
         BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
-            recommenderImage.src = "img/app-photos/ItCanWait.PNG";
-    }        
-}();
+            $('#recommend-image').fadeOut(400, function() { 
+               $('#recommend-image').attr('src', 'img/app-photos/ItCanWait.PNG');
+            })
+            .fadeIn(400);
+    }
+};

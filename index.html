@@ -56,9 +56,6 @@
                     <li>
                         <a class="page-scroll" href="#recommend">Recommend</a>
                     </li>
-                     <li>
-                        <a class="page-scroll" href="#survey">Survey</a>
-                    </li>
                     <li>
                         <a class="page-scroll" href="#contact">Team</a>
                     </li>
@@ -128,7 +125,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
+                        <div id="recommender-phone" class="device-mockup iphone6_plus portrait white">
                             <div class="device">
                                 <div class="screen">
                                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
@@ -142,44 +139,46 @@
                 </div>
                 <div class="col-md-8">
                     <div class="container-fluid">
-                        <div class="col-md-7">
-                            <form onsubmit="AppRecommender">
-                                <h2>Questions</h2>
-                                <div class="survey-questions">
-                                    <span class="survey-question-header">
-                                        <label>Do you want an application with parental controls?</label>
-                                    <span>
-                                    <br/>
-                                    Yes &nbsp <input type="radio" name="questionOne" value="yes" />&nbsp
-                                    No &nbsp <input type="radio" name="questionOne" value="no" />
-                                </div>
+                        <div class="col-md-12">
+                            <div class="app-recommender-holder">
+                                <div id="recommender-form">
+                                    <h2 class="recommender-title">Questions</h2>
+                                    <div class="survey-questions">
+                                        <span class="survey-question-header">
+                                            <label class="question">Do you want an application with parental controls?</label>
+                                        <span>
+                                        <br/>
+                                        <input type="radio" name="questionOne" value="yes" />&nbsp Yes<br /> 
+                                        <input type="radio" name="questionOne" value="no" />&nbsp No 
+                                    </div>
 
-                                <div class="survey-questions">
-                                    <span class="survey-question-header">
-                                        <label>
-                                            Would you like your app to block texting and calls, 
-                                            or provide education about the dangers of texting and driving?
-                                        </label>
-                                    </span>
-                                    <br/>
-                                    Block Texting &nbsp <input type="radio" name="questionTwo" value="blockTexting" /> &nbsp
-                                    Educate &nbsp  <input type="radio" name="questionTwo" value="educate" />
-                                </div>
+                                    <div class="survey-questions">
+                                        <span class="survey-question-header">
+                                            <label class="question">
+                                                Would you like your app to block texting and calls, 
+                                                or provide education about the dangers of texting and driving?
+                                            </label>
+                                        </span>
+                                        <br/>
+                                        <input type="radio" name="questionTwo" value="blockTexting" /> &nbsp Block Texting <br /> 
+                                        <input type="radio" name="questionTwo" value="educate" /> &nbsp Educate 
+                                    </div>
 
-                                <div class="survey-questions">
-                                    <span class="survey-question-header">
-                                        <label>
-                                            Should the app completely block all communication while activated? 
-                                            Or reduce distractions caused by texting and driving? 
-                                        </label>
-                                    </span>
-                                    <br/>
-                                    Block All Communication &nbsp <input type="radio" name="questionThree" value="blockCommunication" /> &nbsp
-                                    Reduce Distractions &nbsp <input type="radio" name="questionThree" value="reduceDistractions" />
-                                </div>
+                                    <div class="survey-questions">
+                                        <span class="survey-question-header">
+                                            <label class="question">
+                                                Should the app completely block all communication while activated? 
+                                                Or reduce distractions caused by texting and driving? 
+                                            </label>
+                                        </span>
+                                        <br/>
+                                        <input type="radio" name="questionThree" value="blockCommunication" /> &nbsp Block All Communication<br />
+                                        <input type="radio" name="questionThree" value="reduceDistractions" /> &nbsp Reduce Distractions 
+                                    </div>
 
-                                <input class="btn btn-primary" type="submit" />
-                            </form>
+                                    <button id="submit-button" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -193,18 +192,6 @@
             </div>
         </div>
         <div class="overlay"></div>
-    </section>
-
-    <section id="survey" class="survey bg-primary text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h2 class="section-heading">Survey will go here</h2>
-                    <div class="badges">
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section id="contact" class="contact bg-secondary">

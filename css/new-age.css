@@ -441,7 +441,22 @@ img::-moz-selection {
   margin-bottom: 20px;
 }
 
+.question {
+  font-weight: bold;
+}
+
 .survey-question-header {
   font-size: 15px;
   font-weight: bold;
+}
+
+.app-recommender-holder {
+  border: 2px solid #031424;
+  padding: 20px;
+  border-radius: 20px;
+  margin-left: 150px;
+}
+
+.recommender-title {
+  text-align: center;
 }
