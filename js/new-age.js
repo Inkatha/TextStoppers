@@ -149,3 +149,45 @@ var AppRecommender = function () {
             RecommenderLink.src = "https://www.itcanwait.com";
     }
 };
+
+var incrementNumber = 0    
+var FactCarousel = function () {
+    var factArray = [
+        ["Drivers ages 20–24 years old made up the highest number of distracted driving crashes.", "- National Highway Transportation Safety Administration"],
+        ["Distracted driving remains one of the most underreported traffic incidents.","- National Highway Transportation Safety Administration"],
+        ["1,600,000 accidents per year are caused by texting while driving.", "- National Safety Council"],
+        ["Texting while driving slows your brake reaction speed by 18%.","- Human Factors & Ergonomics Society"],
+        ["Texting while driving is the same as driving after 4 beers.","- National Highway Transportation Safety Administration"],
+        ["Texting while driving is the same as driving blind for 5 seconds at a time."," – VA. Tech Transportation Institute"],
+        ["11 teens die every day as a result of texting and driving.", "– Insurance Institute for Highway Safety Fatality Facts"],
+        ["Texting while driving makes you 23 times more likely to crash.","– National Highway Transportation Safety"],
+        ["Texting while driving results in 330,000 injuries per year","– Harvard Center for Risk Analysis Study"],
+        ["Texting while driving is the number one distraction reported by teens.", "– National Safety Council"],
+        ["Students who frequently text while driving are more likely to ride with a drunk driver, or drink and drive themselves.","-  Youth Risk Behavior Surveillance System"],
+        ["Texting while driving causes nearly 25% of ALL car accidents.", "- National Highway Transportation Safety Administration"]
+    ];
+
+    setInterval(function () {
+        var randomFact = factArray[incrementNumber][0];
+        var factAttribution = factArray[incrementNumber][1];
+
+        $('#fact-text').text(randomFact);
+        $('#attribute-quote').text(factAttribution);
+
+        $('#did-you-know-container').slideUp(400).slideDown(400);
+
+        $('#fact-text').fadeOut(1, function() {
+            $('#fact-text').text(randomFact);
+        }).fadeIn(1000);
+
+        $('#attribute-quote').fadeOut(1, function() {
+            $('#attribute-quote').text(factAttribution);
+        }).fadeIn(1000);
+        
+        if (incrementNumber === factArray.length - 1) {
+            incrementNumber = 0;
+        } else {
+            incrementNumber++;
+        }
+    }, 8000)
+}();
