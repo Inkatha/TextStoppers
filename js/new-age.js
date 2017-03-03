@@ -79,73 +79,73 @@ var AppRecommender = function () {
     if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'blockTexting' &&
         BlockCommunicationOrReduceDistractions() === 'blockCommunication') {
-            $('#recommend-image').fadeOut(400, function() { 
+            $('#recommend-image').fadeOut(800, function() { 
                 $("#recommend-image").attr('src', 'img/app-photos/CellControl.PNG');
             })
-            .fadeIn(400);
+            .fadeIn(800);
             recommenderLink.href = "https://www.cellcontrol.com";
     }
     else if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'blockTexting' &&
         BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
-            $('#recommend-image').fadeOut(400, function() { 
+            $('#recommend-image').fadeOut(800, function() { 
                 $('#recommend-image').attr('src', 'img/app-photos/DriveSafeMode.PNG');
             })
-            .fadeIn(400);
+            .fadeIn(800);
             recommenderLink.href = "https://drivesafemode.com";
     }
     else if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'educate' &&
         BlockCommunicationOrReduceDistractions() === 'blockCommunication') {
-            $('#recommend-image').fadeOut(400, function() { 
+            $('#recommend-image').fadeOut(800, function() { 
                 $('#recommend-image').attr('src', 'img/app-photos/DriveSafeMode.PNG');
             })
-            .fadeIn(400);
+            .fadeIn(800);
              recommenderLink.href = "https://drivesafemode.com";
     }
     else if (HasParentalControls() === 'yes' &&
         BlockTextingOrEducate() === 'educate' &&
         BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
-            $('#recommend-image').fadeOut(400, function() { 
+            $('#recommend-image').fadeOut(800, function() { 
                 $('#recommend-image').attr('src', 'img/app-photos/Focus.PNG');
             })
-            .fadeIn(400);
+            .fadeIn(800);
              recommenderLink.href = "https://drivefocus.com";
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'blockTexting' &&
         BlockCommunicationOrReduceDistractions() === 'blockCommunication'){
-            $('#recommend-image').fadeOut(400, function() { 
+            $('#recommend-image').fadeOut(800, function() { 
                 $('#recommend-image').attr('src', 'img/app-photos/TextBuster.PNG');
             })
-            .fadeIn(400);
+            .fadeIn(800);
             recommenderLink.href = "https://shop.textbuster.com";
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'blockTexting' &&
         BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
-            $('#recommend-image').fadeOut(400, function() { 
+            $('#recommend-image').fadeOut(800, function() { 
                 $('#recommend-image').attr('src', 'img/app-photos/TextBuster.PNG');
             })
-            .fadeIn(400);
+            .fadeIn(800);
             recommenderLink.href = "https://shop.textbuster.com";
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'educate' &&
         BlockCommunicationOrReduceDistractions() === 'blockCommunication') {
-            $('#recommend-image').fadeOut(400, function() { 
+            $('#recommend-image').fadeOut(800, function() { 
                 $('#recommend-image').attr('src', 'img/app-photos/DriveFirst.PNG');
             })
-            .fadeIn(400);
+            .fadeIn(800);
              recommenderLink.href = "https://sprint-drivefirst.safely.com";
     }
     else if (HasParentalControls() === 'no' &&
         BlockTextingOrEducate() === 'educate' &&
         BlockCommunicationOrReduceDistractions() === 'reduceDistractions') {
-            $('#recommend-image').fadeOut(400, function() { 
+            $('#recommend-image').fadeOut(800, function() { 
                $('#recommend-image').attr('src', 'img/app-photos/ItCanWait.PNG');
             })
-            .fadeIn(400);
+            .fadeIn(800);
             RecommenderLink.src = "https://www.itcanwait.com";
     }
 };
